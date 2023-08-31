@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"] 
+
+[project]
+name = "sparkai"
+version = "1.0"
+description = "Sparkai is a Python library for building AI applications."
+readme = "README.md"
+authors = [{name = "Shibo Li", email = "shadow.li981@gmail.com}]
+license = "MIT"
+dependencies = [
+    "websocket-client"
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.1"

@@ -1,92 +1,96 @@
-# sparkai
+# SparkAI - WebSocket Chatbot Client for 星火大模型
 
+SparkAI 是一个基于WebSocket调用星火大模型API的客户端。其目的是为用户提供高度封装的方法，从而简化使用过程。
 
+## 特性
 
-## Getting started
+- 基于WebSocket的实时聊天：确保及时、持续的交互
+- 星火大模型API：调用先进的AI技术来提供精确的回答
+- 高度封装：减少配置和引导时间，即插即用
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## 快速开始
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+### 安装
 
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://jihulab.com/lichman0405/sparkai.git
-git branch -M main
-git push -uf origin main
+```bash
+pip install sparkai
 ```
 
-## Integrate with your tools
+### 使用
 
-- [ ] [Set up project integrations](https://jihulab.com/lichman0405/sparkai/-/settings/integrations)
+查看demo.py脚本以了解如何使用SparkAI。以下是demo.py的简短摘要:
 
-## Collaborate with your team
+```python
+from sparkai import SparkAI
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+def get_credentials_from_user():
+    """
+    获取用户输入的敏感信息。
+    """
+    APP_ID = "此处填入你的APP_ID"
+    API_KEY = "此处填入你的API_KEY"
+    API_SECRET = "此处填入你的API_SECRET"
+    SPARK_URL = "此处填入你的SPARK_URL"
+    DOMAIN = "此处填入你的DOMAIN"
+	
+    return APP_ID, API_KEY, API_SECRET, SPARK_URL, DOMAIN
 
-## Test and Deploy
+# 以上所有信息都可以在你的讯飞开放平台的控制台中找到
 
-Use the built-in continuous integration in GitLab.
+def main():
+    APP_ID, API_KEY, API_SECRET, SPARK_URL, DOMAIN = get_credentials_from_user()
+    ai = SparkAI(app_id=APP_ID, api_key=API_KEY, api_secret=API_SECRET, spark_url=SPARK_URL, domain=DOMAIN)
+    prompt_message = {"role": "system",
+                      "content": "在一个遥远的星球上，有一位智者名为Zarnak，他对于人类世界有着深厚的了解。"}
+    question_message = {"role": "user",
+                        "content": "Zarnak, 你能告诉我地球上的人的性格为什么多种多样吗？"}
+    format_specification_message = {
+        "role": "system", "content": "请使用第三人称，以故事的方式回答。"}
+    messages = [prompt_message, format_specification_message, question_message]
+    completion = ai.chat(messages, temperature=0.3, max_tokens=200)
+    formatted_answer = f"""
+            Prompt: {prompt_message["content"]}
+            格式要求: {format_specification_message["content"]}
+            问题: {question_message["content"]}
+            回答: {completion["choices"][0]["message"]}
+            """
+    print(formatted_answer)
+    print("Token 使用情况:")
+    for key, value in completion["usage"].items():
+        print(f"{key}: {value}")
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
-***
+if __name__ == "__main__":
+    main()
 
-# Editing this README
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+完整的demo.py脚本在仓库中可用。
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## 开发
 
-## Name
-Choose a self-explaining name for your project.
+### 依赖
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+- `websocket-client`: 为项目提供WebSocket通信功能。
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### 贡献
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+如果您想为该项目做出贡献，请确保遵循以下步骤：
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+1. Fork这个仓库: [SparkAI on GitLab](https://jihulab.com/lichman0405/sparkai.git)。当然，这里的GitLab是大陆本土化的**JihuLab**。
+2. 创建你的功能分支 (`git checkout -b feature/YourFeature`)
+3. 提交你的更改 (`git commit -am 'Add some feature'`)
+4. 推送到分支 (`git push origin feature/YourFeature`)
+5. 在GitLab上创建一个新的Merge Request
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+## 许可
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+该项目使用MIT许可。
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## 联系
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+如有任何问题或建议，请联系 [shadow.li981@gmail.com](mailto:shadow.li981@gmail.com).
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## 文档
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+更多关于 `sparkai` 的详细文档，包括如何安装、使用和其他信息，请访问 [这里](./docs/index.md)。
