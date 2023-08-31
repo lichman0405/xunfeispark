@@ -5,7 +5,7 @@
 
 
 import os
-from auth_websocket_client import ChatbotClient
+from .auth_websocket_client import ChatbotClient
 
 
 class SparkAI:

@@ -14,8 +14,8 @@ from datetime import datetime
 from time import mktime
 from wsgiref.handlers import format_date_time
 import websocket
-from api_utils import gen_params
-from error_codes import get_error_message
+from .api_utils import gen_params
+from .error_codes import get_error_message
 
 
 class ChatbotClient:

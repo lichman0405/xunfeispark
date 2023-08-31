@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/sparkai/__init__.py
+src/sparkai/api_utils.py
+src/sparkai/auth_websocket_client.py
+src/sparkai/error_codes.py
+src/sparkai/sparkai.py
+src/sparkai.egg-info/PKG-INFO
+src/sparkai.egg-info/SOURCES.txt
+src/sparkai.egg-info/dependency_links.txt
+src/sparkai.egg-info/requires.txt
+src/sparkai.egg-info/top_level.txt
