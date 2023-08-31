@@ -82,6 +82,7 @@ if __name__ == "__main__":
 3. 提交你的更改 (`git commit -am 'Add some feature'`)
 4. 推送到分支 (`git push origin feature/YourFeature`)
 5. 在GitLab上创建一个新的Merge Request
+6. 你也能够在[PySparkAI on Github](https://github.com/lichman0405/pysparkai.git)上找到它。
 
 ## 许可
 
