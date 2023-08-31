@@ -2,9 +2,9 @@
 requires = ["setuptools", "wheel"] 
 
 [project]
-name = "pysparkai"
+name = "xunfeisparkai"
 version = "1.0"
-description = "PySparkai is a Python library for building AI applications."
+description = "xunfeisparkai is a Python library for building AI applications."
 readme = "README.md"
 authors = [{name = "Shibo Li", email = "shadow.li981@gmail.com"}]
 license = { file = "LICENSE" }

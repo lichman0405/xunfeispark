@@ -13,7 +13,7 @@ PySparkAI 是一个基于WebSocket调用星火大模型API的客户端。其目�
 ### 安装
 
 ```bash
-pip install pysparkai
+pip install xunfeisparkai
 ```
 
 ### 使用

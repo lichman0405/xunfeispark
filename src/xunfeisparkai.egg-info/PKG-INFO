@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
-Name: pysparkai
+Name: xunfeisparkai
 Version: 1.0
-Summary: PySparkai is a Python library for building AI applications.
+Summary: xunfeisparkai is a Python library for building AI applications.
 Author-email: Shibo Li <shadow.li981@gmail.com>
 License: MIT License
         
@@ -112,6 +112,7 @@ if __name__ == "__main__":
 3. 提交你的更改 (`git commit -am 'Add some feature'`)
 4. 推送到分支 (`git push origin feature/YourFeature`)
 5. 在GitLab上创建一个新的Merge Request
+6. 你也能够在[PySparkAI on Github](https://github.com/lichman0405/pysparkai.git)上找到它。
 
 ## 许可
 
