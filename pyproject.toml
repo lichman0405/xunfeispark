@@ -7,7 +7,7 @@ version = "1.0"
 description = "Sparkai is a Python library for building AI applications."
 readme = "README.md"
 authors = [{name = "Shibo Li", email = "shadow.li981@gmail.com"}]
-license = "MIT"
+license = { file = "LICENSE" }
 dependencies = [
     "websocket-client"
 ]
