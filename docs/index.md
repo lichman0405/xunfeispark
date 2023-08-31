@@ -1,13 +1,13 @@
 ## 文档
 
-### SparkAI 类
+### PySparkAI 类
 
-SparkAI类为您提供了一个与星火大模型进行交互的接口。
+PySparkAI
 
 #### 初始化
 
 ```python
-ai = SparkAI(app_id=APP_ID, api_key=API_KEY, api_secret=API_SECRET, spark_url=SPARK_URL, domain=DOMAIN)
+ai = PySparkAI(app_id=APP_ID, api_key=API_KEY, api_secret=API_SECRET, spark_url=SPARK_URL, domain=DOMAIN)
 ```
 
 参数:

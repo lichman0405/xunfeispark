@@ -1,6 +1,6 @@
-# Contributing to SparkAI
+# Contributing to PySparkAI
 
-Thank you for your interest in contributing to SparkAI! Here are a few pointers about how you can help.
+Thank you for your interest in contributing to PySparkAI! Here are a few pointers about how you can help.
 
 ## Setting Up Your Development Environment
 
@@ -15,7 +15,7 @@ Thank you for your interest in contributing to SparkAI! Here are a few pointers 
 3. Write tests to cover your changes.
 4. Commit your changes, ensuring to write a good commit message.
 5. Push your changes to your fork on JihuLab.
-6. Submit a pull request to the main SparkAI repository.
+6. Submit a pull request to the main PySparkAI repository.
 
 ## Coding Standards
 

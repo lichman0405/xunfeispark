@@ -1,6 +1,6 @@
-# SparkAI - WebSocket Chatbot Client for 星火大模型
+# PySparkAI - WebSocket Chatbot Client for 星火大模型
 
-SparkAI 是一个基于WebSocket调用星火大模型API的客户端。其目的是为用户提供高度封装的方法，从而简化使用过程。
+PySparkAI 是一个基于WebSocket调用星火大模型API的客户端。其目的是为用户提供高度封装的方法，从而简化使用过程。
 
 ## 特性
 
@@ -13,15 +13,15 @@ SparkAI 是一个基于WebSocket调用星火大模型API的客户端。其目的
 ### 安装
 
 ```bash
-pip install sparkai
+pip install pysparkai
 ```
 
 ### 使用
 
-查看demo.py脚本以了解如何使用SparkAI。以下是demo.py的简短摘要:
+查看demo.py脚本以了解如何使用PySparkAI。以下是demo.py的简短摘要:
 
 ```python
-from sparkai import SparkAI
+from pysparkai import PySparkAI
 
 def get_credentials_from_user():
     """
@@ -39,7 +39,7 @@ def get_credentials_from_user():
 
 def main():
     APP_ID, API_KEY, API_SECRET, SPARK_URL, DOMAIN = get_credentials_from_user()
-    ai = SparkAI(app_id=APP_ID, api_key=API_KEY, api_secret=API_SECRET, spark_url=SPARK_URL, domain=DOMAIN)
+    ai = PySparkAI(app_id=APP_ID, api_key=API_KEY, api_secret=API_SECRET, spark_url=SPARK_URL, domain=DOMAIN)
     prompt_message = {"role": "system",
                       "content": "在一个遥远的星球上，有一位智者名为Zarnak，他对于人类世界有着深厚的了解。"}
     question_message = {"role": "user",
@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
 如果您想为该项目做出贡献，请确保遵循以下步骤：
 
-1. Fork这个仓库: [SparkAI on GitLab](https://jihulab.com/lichman0405/sparkai.git)。当然，这里的GitLab是大陆本土化的**JihuLab**。
+1. Fork这个仓库: [PySparkAI on GitLab](https://jihulab.com/lichman0405/sparkai.git)。当然，这里的GitLab是大陆本土化的**JihuLab**。
 2. 创建你的功能分支 (`git checkout -b feature/YourFeature`)
 3. 提交你的更改 (`git commit -am 'Add some feature'`)
 4. 推送到分支 (`git push origin feature/YourFeature`)
@@ -93,4 +93,4 @@ if __name__ == "__main__":
 
 ## 文档
 
-更多关于 `sparkai` 的详细文档，包括如何安装、使用和其他信息，请访问 [这里](./docs/index.md)。
+更多关于 `pysparkai` 的详细文档，包括如何安装、使用和其他信息，请访问 [这里](./docs/index.md)。

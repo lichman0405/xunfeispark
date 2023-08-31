@@ -8,9 +8,9 @@ import os
 from .auth_websocket_client import ChatbotClient
 
 
-class SparkAI:
+class PySparkAI:
     """
-    SparkAI class for chatbot
+    PySparkAI class for chatbot
     """
 
     def __init__(self, api_key, api_secret, app_id, spark_url, domain):

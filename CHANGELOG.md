@@ -1,9 +1,9 @@
 # Changelog
 
-All notable changes to the SparkAI project will be documented in this file.
+All notable changes to the PySparkAI project will be documented in this file.
 
 ## [Unreleased]
 
 ## [1.0.0] - 2023-08-30
 ### Added
-- Initial release of SparkAI.
+- Initial release of PySparkAI.
